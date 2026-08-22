@@ -1,0 +1,37 @@
+@use "_colors";
+@use "_fonts";
+
+* {
+    font-family: "Mintxel", Verdana, sans-serif;
+}
+
+body {
+    background-color: colors.$background;
+    color: colors.$primary;
+}
+
+h1 {
+    font-family: "Monster Friend 2 Foreground", "Lucida Console", monospace;
+}
+
+.fancy {
+    filter: drop-shadow(0.1em 0.1em 0 colors.$primary-shadow);
+}
+
+button {
+    background-color: colors.$background;
+    font-family: "Mercy", 'Times New Roman', Times, serif;
+    padding: 0em 0.3em 0.1em 0.4em;
+    color: colors.$button;
+    border-image: url(../assets/images/border_button.png);
+    border-image-width: 0.2em;
+    border-image-slice: 33%;
+    image-rendering: pixelated;
+
+    &:hover {
+        color: colors.$button-hover;
+        border-image: url(../assets/images/border_button_hover.png);
+        border-image-width: 0.2em;
+        border-image-slice: 33%;
+    }
+}

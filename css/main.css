@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Mintxel";
+  src: url(../assets/fonts/mintxel.otf);
+}
+@font-face {
+  font-family: "Mercy";
+  src: url(../assets/fonts/mercy.otf);
+}
+@font-face {
+  font-family: "Monster Friend 2 Background";
+  src: url(../assets/fonts/MonsterFriend2back.otf);
+}
+@font-face {
+  font-family: "Monster Friend 2 Foreground";
+  src: url(../assets/fonts/MonsterFriend2Fore.otf);
+}
+* {
+  font-family: "Mintxel", Verdana, sans-serif;
+}
+
+body {
+  background-color: #0D0D0D;
+  color: #E5E5E5;
+}
+
+h1 {
+  font-family: "Monster Friend 2 Foreground", "Lucida Console", monospace;
+}
+
+.fancy {
+  -webkit-filter: drop-shadow(0.1em 0.1em 0 #292957);
+          filter: drop-shadow(0.1em 0.1em 0 #292957);
+}
+
+button {
+  background-color: #0D0D0D;
+  font-family: "Mercy", "Times New Roman", Times, serif;
+  padding: 0em 0.3em 0.1em 0.4em;
+  color: #FF7F27;
+  -o-border-image: url(../assets/images/border_button.png);
+     border-image: url(../assets/images/border_button.png);
+  border-image-width: 0.2em;
+  border-image-slice: 33%;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: pixelated;
+}
+button:hover {
+  color: #FFFF00;
+  -o-border-image: url(../assets/images/border_button_hover.png);
+     border-image: url(../assets/images/border_button_hover.png);
+  border-image-width: 0.2em;
+  border-image-slice: 33%;
+}
