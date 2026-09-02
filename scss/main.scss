@@ -43,6 +43,15 @@ a {
 }
 
 .fancy {
+    &.card, &form {
+        border: none;
+        border-image: url("../assets/images/fancy-border.png");
+        border-image-width: 13px;
+        border-image-slice: 40%;
+        image-rendering: pixelated;
+        box-shadow: none;
+    }
+
     // filter: drop-shadow(0.1em 0.1em 0 colors.$primary-shadow);
     text-shadow: 0.1em 0.1em 0 colors.$primary-shadow;
 
@@ -164,6 +173,11 @@ button, .btn-xxs, .btn-xs, .btn-s, .btn-m, .btn, .btn-l, .btn-xl, .btn-xxl {
     font-size: xx-large;
 }
 
+
+ul {
+    list-style-type: square;
+}
+
 .navbar {
     font-size:  xx-large;
     list-style-type: none;
@@ -230,8 +244,8 @@ button, .btn-xxs, .btn-xs, .btn-s, .btn-m, .btn, .btn-l, .btn-xl, .btn-xxl {
     }
 }
 
-.card {
-    padding: 0.2em 0.6em;
+.card, form {
+    padding: 1em 2em;
     border: 0.2em solid colors.$primary;
     box-shadow:  0.1em 0.1em 0 colors.$primary-shadow;
 }
@@ -310,4 +324,17 @@ button, .btn-xxs, .btn-xs, .btn-s, .btn-m, .btn, .btn-l, .btn-xl, .btn-xxl {
             color: transparent;
         }
     }
+}
+
+label {
+    font-family: "Mars Need Cunnilingus", "Mintxel", Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+input[type=text], input[type=number] {
+    background-color: colors.$background;
+    color: colors.$primary;
+    border: 0.25em solid colors.$primary;
+    margin: 0.5em 0;
+    padding: 0.5em;
 }
