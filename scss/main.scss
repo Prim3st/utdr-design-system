@@ -11,18 +11,100 @@ body {
 }
 
 h1 {
-    font-family: "Monster Friend 2 Foreground", "Lucida Console", monospace;
+    font-family: "Monster Friend 2 Foreground", "Mintxel", monospace;
+}
+
+strong {
+    color: colors.$strong;
+}
+
+em {
+    color: colors.$emphasis;
+}
+
+.error, .alert-error {
+    color: colors.$error;
+}
+
+.warning, .alert-warning {
+    color: colors.$warning;
+}
+
+.success, .alert-success {
+    color: colors.$success;
+}
+
+a {
+    color: colors.$button;
+
+    &:hover {
+        color: colors.$button-hover;
+    }
 }
 
 .fancy {
-    filter: drop-shadow(0.1em 0.1em 0 colors.$primary-shadow);
+    // filter: drop-shadow(0.1em 0.1em 0 colors.$primary-shadow);
+    text-shadow: 0.1em 0.1em 0 colors.$primary-shadow;
+
+    a {
+        text-shadow: 0.1em 0.1em 0 colors.$button-disabled;
+    }
+
+    strong, em, .error, .alert-error, .warning, .alert-warning, .success, .alert-success {
+        text-shadow: none;
+    }
+
+    strong {
+        background: -webkit-linear-gradient(colors.$strong-highlight, colors.$strong);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0.1em 0.1em 0 colors.$strong-shadow);
+    }
+
+    em {
+        background: -webkit-linear-gradient(colors.$emphasis-highlight, colors.$emphasis);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0.1em 0.1em 0 colors.$emphasis-shadow);
+    }
+
+    .error, .alert-error {
+        background: -webkit-linear-gradient(colors.$error-highlight, colors.$error);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0.1em 0.1em 0 colors.$error-shadow);
+    }
+
+    .warning, .alert-warning {
+        background: -webkit-linear-gradient(colors.$warning-highlight, colors.$warning);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0.1em 0.1em 0 colors.$warning-shadow);
+    }
+
+    .success, .alert-success {
+        background: -webkit-linear-gradient(colors.$success-highlight, colors.$success);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0.1em 0.1em 0 colors.$success-shadow);
+    }
 }
 
-button {
+
+@mixin btn {
     background-color: colors.$background;
     font-family: "Mercy", 'Times New Roman', Times, serif;
     padding: 0em 0.3em 0.1em 0.4em;
     color: colors.$button;
+    -webkit-text-fill-color: colors.$button;
+    filter: none;
+    text-shadow: none;
+
     border-image: url(../assets/images/border_button.png);
     border-image-width: 0.2em;
     border-image-slice: 33%;
@@ -30,8 +112,202 @@ button {
 
     &:hover {
         color: colors.$button-hover;
+        -webkit-text-fill-color: colors.$button-hover;
         border-image: url(../assets/images/border_button_hover.png);
         border-image-width: 0.2em;
         border-image-slice: 33%;
+
+        a {
+            color: colors.$button-hover;
+            -webkit-text-fill-color: colors.$button-hover;
+        }
+    }
+
+    &:disabled {
+        color: colors.$button-disabled;
+        -webkit-text-fill-color: colors.$button-disabled;
+        border-image: url(../assets/images/border_button_disabled.png);
+        border-image-width: 0.2em;
+        border-image-slice: 33%;
+    }
+}
+
+button, .btn-xxs, .btn-xs, .btn-s, .btn-m, .btn, .btn-l, .btn-xl, .btn-xxl {
+    @include btn;
+}
+
+.btn-xxs {
+    font-size: xx-small;
+}
+
+.btn-xs {
+    font-size: x-small;
+}
+
+.btn-s {
+    font-size: small;
+}
+
+.btn-m {
+    font-size: medium;
+}
+
+.btn-l {
+    font-size: large;
+}
+
+.btn-xl {
+    font-size: x-large;
+}
+
+.btn-xxl {
+    font-size: xx-large;
+}
+
+.navbar {
+    font-size:  xx-large;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    li {
+        @include btn;
+        float: left;
+        text-transform: uppercase;
+        margin: 0.1em 0.1em 0.1em 0.1em;
+        padding: 0.2em 0.7em 0.3em 0.9em;
+        
+        a {
+            display: block;
+            font-family: "Mercy", 'Times New Roman', Times, serif;
+            color: colors.$button;
+            text-align: center;
+            text-decoration: none;
+
+            &:hover {
+                color: colors.$button-hover;
+                -webkit-text-fill-color: colors.$button-hover;
+            }
+        }
+    }
+}
+
+.navbar-alt {
+    font-size:  xx-large;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    li {
+        float: left;
+        text-transform: uppercase;
+        margin: 0.1em 0.1em 0.1em 0.1em;
+        padding: 0em 0.4em 0.1em 0.5em;
+        border: 0.1em solid colors.$primary;
+
+        &:hover {
+            border: 0.1em solid colors.$button-hover;
+
+            a {
+                color: colors.$button-hover;
+                -webkit-text-fill-color: colors.$button-hover;
+            }
+        }
+        
+        a {
+            display: block;
+            color: colors.$primary;
+            text-align: center;
+            text-decoration: none;
+
+            &:hover {
+                color: colors.$button-hover;
+                -webkit-text-fill-color: colors.$button-hover;
+            }
+        }
+    }
+}
+
+.card {
+    padding: 0.2em 0.6em;
+    border: 0.2em solid colors.$primary;
+    box-shadow:  0.1em 0.1em 0 colors.$primary-shadow;
+}
+
+.alert {
+    padding: 0.2em 0.6em;
+    border: 0.2em solid colors.$primary;
+    box-shadow:  0.1em 0.1em 0 colors.$primary-shadow;
+
+    .closebtn {
+        margin-left: 1em;
+        float: right;
+        font-size: 1.5em;
+        line-height: 1em;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            color: transparent;
+        }
+    }
+}
+
+.alert-error {
+    padding: 0.2em 0.6em;
+    border: 0.2em solid colors.$error;
+    box-shadow:  0.1em 0.1em 0 colors.$error-shadow;
+
+    .closebtn {
+        margin-left: 1em;
+        float: right;
+        font-size: 1.5em;
+        line-height: 1em;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            color: transparent;
+        }
+    }
+}
+
+.alert-warning {
+    padding: 0.2em 0.6em;
+    border: 0.2em solid colors.$warning;
+    box-shadow:  0.1em 0.1em 0 colors.$warning-shadow;
+
+    .closebtn {
+        margin-left: 1em;
+        float: right;
+        font-size: 1.5em;
+        line-height: 1em;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            color: transparent;
+        }
+    }
+}
+
+.alert-success {
+    padding: 0.2em 0.6em;
+    border: 0.2em solid colors.$success;
+    box-shadow:  0.1em 0.1em 0 colors.$success-shadow;
+
+    .closebtn {
+        margin-left: 1em;
+        float: right;
+        font-size: 1.5em;
+        line-height: 1em;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            color: transparent;
+        }
     }
 }

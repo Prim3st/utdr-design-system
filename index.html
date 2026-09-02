@@ -7,13 +7,72 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <ul class="navbar-alt">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            This is an alert box.
+        </div>
+        <div class="alert-success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            This is an alert box.
+        </div>
+        <div class="alert-warning">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            This is an alert box.
+        </div>
+        <div class="alert-error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            This is an alert box.
+        </div>
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>
-        <p>Paragraph</p>
-        <p class="fancy">Fancy paragraph.</p>
-        <button style="font-size: medium;">button</button>
+        <div class="card">
+            Test.
+        </div>
+        <p>Paragraph. 
+            <a href="#home">Hyperlink.</a>
+            <strong>Strong text.</strong> 
+            <em>Emphasis text.</em> 
+            <span class="error">Error text.</span> 
+            <span class="warning">Warning text.</span> 
+            <span class="success">Success text.</span>
+        </p>
+        <p class="fancy">Fancy paragraph. 
+            <a href="#home">Hyperlink.</a>
+            <strong>Strong text.</strong> 
+            <em>Emphasis text.</em> 
+            <span class="error">Error text.</span> 
+            <span class="warning">Warning text.</span> 
+            <span class="success">Success text.</span>
+        </p>
+        <button class="btn-xxs">button</button>
+        <button class="btn-xs">button</button>
+        <button class="btn-s">button</button>
+        <button class="btn-m">button</button>
+        <button class="btn-l">button</button>
+        <button class="btn-xl">button</button>
+        <button class="btn-xxl">button</button>
+        <br>
+        <button disabled class="btn-xxs">button</button>
+        <button disabled class="btn-xs">button</button>
+        <button disabled class="btn-s">button</button>
+        <button disabled class="btn-m">button</button>
+        <button disabled class="btn-l">button</button>
+        <button disabled class="btn-xl">button</button>
+        <button disabled class="btn-xxl">button</button>
     </body>
 </html>

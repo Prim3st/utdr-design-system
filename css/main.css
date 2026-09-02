@@ -7,6 +7,11 @@
   src: url(../assets/fonts/mercy.otf);
 }
 @font-face {
+  font-family: "Mercy";
+  src: url(../assets/fonts/Ancient\ Modern\ Tales.otf);
+  unicode-range: U+0040, U+0023-0026;
+}
+@font-face {
   font-family: "Monster Friend 2 Background";
   src: url(../assets/fonts/MonsterFriend2back.otf);
 }
@@ -24,19 +29,95 @@ body {
 }
 
 h1 {
-  font-family: "Monster Friend 2 Foreground", "Lucida Console", monospace;
+  font-family: "Monster Friend 2 Foreground", "Mintxel", monospace;
+}
+
+strong {
+  color: #FFFF3C;
+}
+
+em {
+  color: #3C3CFF;
+}
+
+.error, .alert-error {
+  color: #FF3C3C;
+}
+
+.warning, .alert-warning {
+  color: #FF7F00;
+}
+
+.success, .alert-success {
+  color: #0EFF0E;
+}
+
+a {
+  color: #FF7F27;
+}
+a:hover {
+  color: #FFFF00;
 }
 
 .fancy {
-  -webkit-filter: drop-shadow(0.1em 0.1em 0 #292957);
-          filter: drop-shadow(0.1em 0.1em 0 #292957);
+  text-shadow: 0.1em 0.1em 0 #292957;
+}
+.fancy a {
+  text-shadow: 0.1em 0.1em 0 #753000;
+}
+.fancy strong, .fancy em, .fancy .error, .fancy .alert-error, .fancy .warning, .fancy .alert-warning, .fancy .success, .fancy .alert-success {
+  text-shadow: none;
+}
+.fancy strong {
+  background: -webkit-linear-gradient(#FFFFC3, #FFFF3C);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(0.1em 0.1em 0 #4C4C00);
+          filter: drop-shadow(0.1em 0.1em 0 #4C4C00);
+}
+.fancy em {
+  background: -webkit-linear-gradient(#C3C3FF, #3C3CFF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(0.1em 0.1em 0 #00004C);
+          filter: drop-shadow(0.1em 0.1em 0 #00004C);
+}
+.fancy .error, .fancy .alert-error {
+  background: -webkit-linear-gradient(#FFC3C3, #FF3C3C);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(0.1em 0.1em 0 #4C0000);
+          filter: drop-shadow(0.1em 0.1em 0 #4C0000);
+}
+.fancy .warning, .fancy .alert-warning {
+  background: -webkit-linear-gradient(#FFC285, #FF7F00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(0.1em 0.1em 0 #4D2600);
+          filter: drop-shadow(0.1em 0.1em 0 #4D2600);
+}
+.fancy .success, .fancy .alert-success {
+  background: -webkit-linear-gradient(#A8FFA8, #0EFF0E);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(0.1em 0.1em 0 #004C00);
+          filter: drop-shadow(0.1em 0.1em 0 #004C00);
 }
 
-button {
+button, .btn-xxs, .btn-xs, .btn-s, .btn-m, .btn, .btn-l, .btn-xl, .btn-xxl {
   background-color: #0D0D0D;
   font-family: "Mercy", "Times New Roman", Times, serif;
   padding: 0em 0.3em 0.1em 0.4em;
   color: #FF7F27;
+  -webkit-text-fill-color: #FF7F27;
+  -webkit-filter: none;
+          filter: none;
+  text-shadow: none;
   -o-border-image: url(../assets/images/border_button.png);
      border-image: url(../assets/images/border_button.png);
   border-image-width: 0.2em;
@@ -45,10 +126,228 @@ button {
       image-rendering: -webkit-optimize-contrast;
       image-rendering: pixelated;
 }
-button:hover {
+button:hover, .btn-xxs:hover, .btn-xs:hover, .btn-s:hover, .btn-m:hover, .btn:hover, .btn-l:hover, .btn-xl:hover, .btn-xxl:hover {
   color: #FFFF00;
+  -webkit-text-fill-color: #FFFF00;
   -o-border-image: url(../assets/images/border_button_hover.png);
      border-image: url(../assets/images/border_button_hover.png);
   border-image-width: 0.2em;
   border-image-slice: 33%;
+}
+button:hover a, .btn-xxs:hover a, .btn-xs:hover a, .btn-s:hover a, .btn-m:hover a, .btn:hover a, .btn-l:hover a, .btn-xl:hover a, .btn-xxl:hover a {
+  color: #FFFF00;
+  -webkit-text-fill-color: #FFFF00;
+}
+button:disabled, .btn-xxs:disabled, .btn-xs:disabled, .btn-s:disabled, .btn-m:disabled, .btn:disabled, .btn-l:disabled, .btn-xl:disabled, .btn-xxl:disabled {
+  color: #753000;
+  -webkit-text-fill-color: #753000;
+  -o-border-image: url(../assets/images/border_button_disabled.png);
+     border-image: url(../assets/images/border_button_disabled.png);
+  border-image-width: 0.2em;
+  border-image-slice: 33%;
+}
+
+.btn-xxs {
+  font-size: xx-small;
+}
+
+.btn-xs {
+  font-size: x-small;
+}
+
+.btn-s {
+  font-size: small;
+}
+
+.btn-m {
+  font-size: medium;
+}
+
+.btn-l {
+  font-size: large;
+}
+
+.btn-xl {
+  font-size: x-large;
+}
+
+.btn-xxl {
+  font-size: xx-large;
+}
+
+.navbar {
+  font-size: xx-large;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.navbar li {
+  background-color: #0D0D0D;
+  font-family: "Mercy", "Times New Roman", Times, serif;
+  padding: 0em 0.3em 0.1em 0.4em;
+  color: #FF7F27;
+  -webkit-text-fill-color: #FF7F27;
+  -webkit-filter: none;
+          filter: none;
+  text-shadow: none;
+  -o-border-image: url(../assets/images/border_button.png);
+     border-image: url(../assets/images/border_button.png);
+  border-image-width: 0.2em;
+  border-image-slice: 33%;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: pixelated;
+}
+.navbar li:hover {
+  color: #FFFF00;
+  -webkit-text-fill-color: #FFFF00;
+  -o-border-image: url(../assets/images/border_button_hover.png);
+     border-image: url(../assets/images/border_button_hover.png);
+  border-image-width: 0.2em;
+  border-image-slice: 33%;
+}
+.navbar li:hover a {
+  color: #FFFF00;
+  -webkit-text-fill-color: #FFFF00;
+}
+.navbar li:disabled {
+  color: #753000;
+  -webkit-text-fill-color: #753000;
+  -o-border-image: url(../assets/images/border_button_disabled.png);
+     border-image: url(../assets/images/border_button_disabled.png);
+  border-image-width: 0.2em;
+  border-image-slice: 33%;
+}
+.navbar li {
+  float: left;
+  text-transform: uppercase;
+  margin: 0.1em 0.1em 0.1em 0.1em;
+  padding: 0.2em 0.7em 0.3em 0.9em;
+}
+.navbar li a {
+  display: block;
+  font-family: "Mercy", "Times New Roman", Times, serif;
+  color: #FF7F27;
+  text-align: center;
+  text-decoration: none;
+}
+.navbar li a:hover {
+  color: #FFFF00;
+  -webkit-text-fill-color: #FFFF00;
+}
+
+.navbar-alt {
+  font-size: xx-large;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.navbar-alt li {
+  float: left;
+  text-transform: uppercase;
+  margin: 0.1em 0.1em 0.1em 0.1em;
+  padding: 0em 0.4em 0.1em 0.5em;
+  border: 0.1em solid #E5E5E5;
+}
+.navbar-alt li:hover {
+  border: 0.1em solid #FFFF00;
+}
+.navbar-alt li:hover a {
+  color: #FFFF00;
+  -webkit-text-fill-color: #FFFF00;
+}
+.navbar-alt li a {
+  display: block;
+  color: #E5E5E5;
+  text-align: center;
+  text-decoration: none;
+}
+.navbar-alt li a:hover {
+  color: #FFFF00;
+  -webkit-text-fill-color: #FFFF00;
+}
+
+.card {
+  padding: 0.2em 0.6em;
+  border: 0.2em solid #E5E5E5;
+  -webkit-box-shadow: 0.1em 0.1em 0 #292957;
+          box-shadow: 0.1em 0.1em 0 #292957;
+}
+
+.alert {
+  padding: 0.2em 0.6em;
+  border: 0.2em solid #E5E5E5;
+  -webkit-box-shadow: 0.1em 0.1em 0 #292957;
+          box-shadow: 0.1em 0.1em 0 #292957;
+}
+.alert .closebtn {
+  margin-left: 1em;
+  float: right;
+  font-size: 1.5em;
+  line-height: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.alert .closebtn:hover {
+  color: transparent;
+}
+
+.alert-error {
+  padding: 0.2em 0.6em;
+  border: 0.2em solid #FF3C3C;
+  -webkit-box-shadow: 0.1em 0.1em 0 #4C0000;
+          box-shadow: 0.1em 0.1em 0 #4C0000;
+}
+.alert-error .closebtn {
+  margin-left: 1em;
+  float: right;
+  font-size: 1.5em;
+  line-height: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.alert-error .closebtn:hover {
+  color: transparent;
+}
+
+.alert-warning {
+  padding: 0.2em 0.6em;
+  border: 0.2em solid #FF7F00;
+  -webkit-box-shadow: 0.1em 0.1em 0 #4D2600;
+          box-shadow: 0.1em 0.1em 0 #4D2600;
+}
+.alert-warning .closebtn {
+  margin-left: 1em;
+  float: right;
+  font-size: 1.5em;
+  line-height: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.alert-warning .closebtn:hover {
+  color: transparent;
+}
+
+.alert-success {
+  padding: 0.2em 0.6em;
+  border: 0.2em solid #0EFF0E;
+  -webkit-box-shadow: 0.1em 0.1em 0 #004C00;
+          box-shadow: 0.1em 0.1em 0 #004C00;
+}
+.alert-success .closebtn {
+  margin-left: 1em;
+  float: right;
+  font-size: 1.5em;
+  line-height: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.alert-success .closebtn:hover {
+  color: transparent;
 }
